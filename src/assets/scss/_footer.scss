@@ -1,0 +1,54 @@
+footer {
+  background-color: $footer-bg;
+  padding: 5% 0;
+
+  .container {
+    .row {
+      .footer-logo-col {
+        h4 {
+          color: white;
+          font-weight: 700;
+        }
+      }
+
+      .footer-list-col {
+        h6 {
+          color: white;
+        }
+
+        ul {
+          li {
+            a {
+              display: inline-block;
+              color: #a9a7ac;
+              transition: 0.3s;
+            }
+
+            a:hover {
+              color: $btn-color;
+            }
+          }
+        }
+      }
+
+      .footer-icons-col {
+        ul {
+          @include Flexing;
+
+          li {
+            .img-div {
+              width: 85%;
+              img {
+                width: 100%;
+              }
+            }
+          }
+
+          li:not(:last-child) {
+            margin-right: 7.5%;
+          }
+        }
+      }
+    }
+  }
+}
