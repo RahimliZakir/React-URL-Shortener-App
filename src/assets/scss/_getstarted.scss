@@ -1,0 +1,50 @@
+#get-started {
+  padding: 5% 0;
+
+  .container {
+    .row {
+      align-items: center;
+
+      .get-started-left {
+        h1 {
+          font-size: 4rem;
+          font-weight: 700;
+        }
+
+        p {
+          padding-right: 35%;
+          color: #a9a8af;
+        }
+
+        .get-started-btn {
+          display: inline-block;
+          font-weight: 600;
+          margin-top: 5%;
+          background-color: #9ae3e3;
+          color: white;
+          padding: 7px 23px;
+          border-radius: 50px;
+          border: 2px solid transparent;
+          transition: 0.3s;
+        }
+
+        .get-started-btn:hover {
+          color: #9ae3e3;
+          background-color: white;
+          border: 2px solid #9ae3e3;
+        }
+      }
+
+      .get-started-right {
+        .img-div {
+          width: 125%;
+          position: relative;
+          right: -12.5%;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
