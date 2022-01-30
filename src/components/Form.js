@@ -1,33 +1,38 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import API from "../api";
 import { Container, Row, Col, Button, ListGroup } from "react-bootstrap";
 import { useCopyClipboard } from "../hooks";
 
 const Form = () => {
   const [data, setData] = useState("");
   const [url, setUrl] = useState([]);
-  const [copyClipboard] = useCopyClipboard();
-  const [term, setTerm] = useState("");
 
-  const handleCopy = () => {
-    setTerm(term);
+  const [isCopied, copyClipboard] = useCopyClipboard();
+
+  const handleCopy = (val) => {
+    copyClipboard(val);
   };
 
-  const handleInput = (e) => {
-    setData(e.target.value);
-    console.log(data);
-  };
-
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    axios
-      .get("https://api.shrtco.de/v2/shorten", {
-        params: {
-          url: data,
-        },
-      })
-      .then((res) => setUrl([...url, res.data.result.full_short_link]));
+    const {
+      data: { result },
+    } = await API.get("/shorten", {
+      params: {
+        url: data,
+      },
+    });
+
+    setUrl([
+      ...url,
+      {
+        real: result.original_link,
+        short: result.full_short_link,
+      },
+    ]);
+
+    setData("");
   };
 
   return (
@@ -38,21 +43,27 @@ const Form = () => {
             <form id="term-form" className="d-flex" onSubmit={handleFormSubmit}>
               <input
                 className="form-control form-input"
-                placeholder="Shorthen a link here!"
+                placeholder="Shorthen a link here.."
                 value={data}
-                onChange={handleInput}
+                onChange={(e) => setData(e.target.value)}
               />
               <Button type="submit">Shorten it!</Button>
             </form>
             <ListGroup>
-              {url.map((item) => {
+              {url?.map((item, index) => {
                 return (
-                  <ListGroup.Item key={item}>
-                    <a href={item} target="_blank" rel="noreferrer">
-                      {item}
+                  <ListGroup.Item key={index + 1}>
+                    <span>Shorten:</span>
+                    <a href={item.short} target="_blank" rel="noreferrer">
+                      {item.short}
                     </a>
-                    <Button variant="warning" onClick={handleCopy}>
-                      Copy
+                    <span className="ms-2">Real: {item.real}</span>
+                    <Button
+                      variant={isCopied ? "primary" : "warning"}
+                      className="copy-btn"
+                      onClick={() => handleCopy(item.short)}
+                    >
+                      {isCopied ? "Copied" : "Copy"}
                     </Button>
                   </ListGroup.Item>
                 );

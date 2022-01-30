@@ -13,11 +13,11 @@
     background-color: $btn-color;
     margin-left: 2.5%;
     font-weight: 600;
+    box-shadow: none !important;
   }
+}
 
-  .copy {
-    position: fixed;
-    right: 100%;
-    visibility: hidden;
-  }
+.copy-btn {
+  float: right;
+  box-shadow: none !important;
 }
