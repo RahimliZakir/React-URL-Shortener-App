@@ -1,7 +1,8 @@
 import React from "react";
-import Form from "./components/Form";
 import Header from "./components/Header";
 import GetStarted from "./components/GetStarted";
+import Form from "./components/Form";
+import Advanced from "./components/Advanced";
 import {} from "react-bootstrap";
 
 import "./assets/scss/style.scss";
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <GetStarted />
       <Form />
+      <Advanced />
     </div>
   );
 }

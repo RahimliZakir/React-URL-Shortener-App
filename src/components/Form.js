@@ -17,7 +17,11 @@ const Form = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    if (data === "") setError("Please add alink");
+    if (data === "") {
+      setError("Please add alink");
+      return;
+      
+    }
 
     const {
       data: { result },
@@ -61,7 +65,7 @@ const Form = () => {
             <ListGroup>
               {url?.map((item, index) => {
                 return (
-                  <ListGroup.Item key={index + 1} className="my-3">
+                  <ListGroup.Item key={index + 1} className="mt-3">
                     <Row className="align-items-center">
                       <Col lg="6" md="6" className="link-response-left">
                         {item.real}
