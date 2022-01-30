@@ -1,23 +1,69 @@
-#term-form {
-  background-color: $common-color;
-  padding: 3% 2%;
-  border-radius: 4px;
-  justify-content: center;
+#form {
+  background-color: #f0f1f6;
 
-  .form-input {
-    width: 75%;
-    box-shadow: none !important;
+  .container {
+    .row {
+      .col-md-8 {
+        margin-top: -4%;
+
+        #term-form {
+          background-color: $common-color;
+          padding: 4% 2%;
+          border-radius: 6px;
+
+          div {
+            justify-content: center;
+
+            .form-input {
+              width: 75%;
+              box-shadow: none !important;
+              border: 1px solid transparent;
+            }
+
+            .form-input.is-validation {
+              border: 1px solid red;
+            }
+
+            button {
+              background-color: $btn-color;
+              margin-left: 2.5%;
+              border-radius: 5%;
+              font-weight: 600;
+              box-shadow: none !important;
+              padding: 1.5% 3.5%;
+            }
+          }
+
+          .text-validation {
+            margin-left: 2.75% !important;
+          }
+        }
+
+        .list-group {
+          .list-group-item {
+            .row {
+              .link-response-right {
+                @include Flexing(center, flex-end);
+
+                .copy-btn {
+                  float: right;
+                  box-shadow: none !important;
+                  background-color: #2cd0ce;
+                  border: none !important;
+                  padding: 2.5% 9.5%;
+                  color: white;
+                  font-weight: 600;
+                  transition: 0.3s;
+                }
+
+                .copied {
+                  background-color: #3a3053;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
-
-  button {
-    background-color: $btn-color;
-    margin-left: 2.5%;
-    font-weight: 600;
-    box-shadow: none !important;
-  }
-}
-
-.copy-btn {
-  float: right;
-  box-shadow: none !important;
 }
