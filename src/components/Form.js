@@ -10,7 +10,15 @@ const Form = () => {
 
   const [isCopied, copyClipboard] = useCopyClipboard();
 
-  const handleCopy = (val) => {
+  const handleCopy = (val, e) => {
+    e.target.textContent = "Copied!";
+    e.target.className += " copied";
+
+    setTimeout(() => {
+      e.target.textContent = "Copy";
+      e.target.classList.remove("copied");
+    }, 2000);
+
     copyClipboard(val);
   };
 
@@ -20,7 +28,6 @@ const Form = () => {
     if (data === "") {
       setError("Please add alink");
       return;
-      
     }
 
     const {
@@ -81,11 +88,11 @@ const Form = () => {
                           {item.short}
                         </a>
                         <Button
-                          variant={isCopied ? "primary" : "warning"}
-                          className={`copy-btn ${isCopied ? "copied" : ""}`}
-                          onClick={() => handleCopy(item.short)}
+                          variant={"warning"}
+                          className="copy-btn"
+                          onClick={(e) => handleCopy(item.short, e)}
                         >
-                          {isCopied ? "Copied!" : "Copy"}
+                          Copy
                         </Button>
                       </Col>
                     </Row>
