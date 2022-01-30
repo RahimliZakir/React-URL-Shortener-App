@@ -34,8 +34,8 @@
           padding: 15% 10% 10%;
           height: 225px;
           border-radius: 5px;
-          box-shadow: 1px 1px 12px 0px rgba(0, 0, 0, 0.75);
-
+          box-shadow: 0px 0px 2.5px 0px rgba(0, 0, 0, 0.5);
+          transition: 0.3s;
           .img-div {
             position: absolute;
             left: 10%;
@@ -57,6 +57,10 @@
             color: #a9a8af;
             padding-right: 5.5%;
           }
+        }
+
+        .custom-card:hover {
+          transform: translateY(-13px);
         }
 
         .second-custom-card {
