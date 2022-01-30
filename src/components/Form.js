@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, ListGroup } from "react-bootstrap";
+import { useCopyClipboard } from "../hooks";
 
 const Form = () => {
   const [data, setData] = useState("");
   const [url, setUrl] = useState([]);
+  const [copyClipboard] = useCopyClipboard();
+  const [term, setTerm] = useState("");
+
+  const handleCopy = () => {
+    setTerm(term);
+  };
 
   const handleInput = (e) => {
     setData(e.target.value);
@@ -37,11 +44,20 @@ const Form = () => {
               />
               <Button type="submit">Shorten it!</Button>
             </form>
-            <ul>
+            <ListGroup>
               {url.map((item) => {
-                return <li key={item}>{item} </li>;
+                return (
+                  <ListGroup.Item key={item}>
+                    <a href={item} target="_blank" rel="noreferrer">
+                      {item}
+                    </a>
+                    <Button variant="warning" onClick={handleCopy}>
+                      Copy
+                    </Button>
+                  </ListGroup.Item>
+                );
               })}
-            </ul>
+            </ListGroup>
           </Col>
         </Row>
       </Container>
