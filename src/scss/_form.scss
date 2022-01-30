@@ -1,0 +1,17 @@
+#term-form {
+  background-color: $common-color;
+  padding: 3% 2%;
+  border-radius: 4px;
+  justify-content: center;
+
+  .form-input {
+    width: 75%;
+    box-shadow: none !important;
+  }
+
+  button {
+    background-color: $btn-color;
+    margin-left: 2.5%;
+    font-weight: 600;
+  }
+}
