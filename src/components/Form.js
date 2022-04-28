@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import API from "../api";
 import { Container, Row, Col, Button, ListGroup } from "react-bootstrap";
+import classNames from "classnames";
+
+import API from "../api";
 import { useCopyClipboard } from "../hooks";
 
 const Form = () => {
@@ -10,14 +12,12 @@ const Form = () => {
 
   const [isCopied, copyClipboard] = useCopyClipboard();
 
-  const handleCopy = (val, e) => {
-    e.target.textContent = "Copied!";
-    e.target.className += " copied";
+  const btnClass = classNames("copy-btn", {
+    worked: isCopied,
+  });
 
-    setTimeout(() => {
-      e.target.textContent = "Copy";
-      e.target.classList.remove("copied");
-    }, 2000);
+  const handleCopy = (val, e) => {
+    e.target.innerText = "Copied!";
 
     copyClipboard(val);
   };
@@ -26,7 +26,7 @@ const Form = () => {
     e.preventDefault();
 
     if (data === "") {
-      setError("Please add alink");
+      setError("Please add a link");
       return;
     }
 
@@ -89,7 +89,7 @@ const Form = () => {
                         </a>
                         <Button
                           variant={"warning"}
-                          className="copy-btn"
+                          className={btnClass}
                           onClick={(e) => handleCopy(item.short, e)}
                         >
                           Copy
