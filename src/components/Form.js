@@ -1,26 +1,13 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Button, ListGroup } from "react-bootstrap";
-import classNames from "classnames";
 
 import API from "../api";
-import { useCopyClipboard } from "../hooks";
+import ShortLink from "./ShortLink";
 
 const Form = () => {
   const [data, setData] = useState("");
   const [url, setUrl] = useState([]);
   const [error, setError] = useState("");
-
-  const [isCopied, copyClipboard] = useCopyClipboard();
-
-  const btnClass = classNames("copy-btn", {
-    worked: isCopied,
-  });
-
-  const handleCopy = (val, e) => {
-    e.target.innerText = "Copied!";
-
-    copyClipboard(val);
-  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -71,33 +58,7 @@ const Form = () => {
             </form>
             <ListGroup>
               {url?.map((item, index) => {
-                return (
-                  <ListGroup.Item key={index + 1} className="mt-3">
-                    <Row className="align-items-center">
-                      <Col lg="6" md="6" className="link-response-left">
-                        {item.real}
-                      </Col>
-                      <Col lg="6" md="6" className="link-response-right">
-                        <a
-                          href={item.short}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="me-3"
-                          style={{ color: "#2CD0CE" }}
-                        >
-                          {item.short}
-                        </a>
-                        <Button
-                          variant={"warning"}
-                          className={btnClass}
-                          onClick={(e) => handleCopy(item.short, e)}
-                        >
-                          Copy
-                        </Button>
-                      </Col>
-                    </Row>
-                  </ListGroup.Item>
-                );
+                return <ShortLink item={item} index={index} />;
               })}
             </ListGroup>
           </Col>

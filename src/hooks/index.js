@@ -4,8 +4,8 @@ export const useCopyClipboard = (interval = 2000) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const copyClipboard = (value) => {
-    navigator.clipboard.writeText(value);
     setIsCopied(true);
+    navigator.clipboard.writeText(value);
   };
 
   useEffect(() => {
