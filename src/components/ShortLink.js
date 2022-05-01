@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button, ListGroup } from "react-bootstrap";
+import { Row, Col, Button, ListGroup } from "react-bootstrap";
 import classNames from "classnames";
 
 import { useCopyClipboard } from "../hooks";
@@ -11,7 +11,7 @@ const ShortLink = ({ item }) => {
   };
 
   const btnClass = classNames("copy-btn", {
-    worked: isCopied,
+    copied: isCopied,
   });
 
   return (

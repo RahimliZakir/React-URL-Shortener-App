@@ -9,7 +9,7 @@ const Header = () => {
       <nav>
         <Container>
           <Row>
-            <Col lg="6" md="6" className="left-nav">
+            <Col lg="6" md="6" sm="6" className="left-nav">
               <ul className="left-nav-ul">
                 <li>
                   <div className="img-div">

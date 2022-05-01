@@ -16,7 +16,7 @@ const Advanced = () => {
             advanced statistics dashboard.
           </p>
           <div className="line"></div>
-          <Col lg="4" md="4" className="cards-col">
+          <Col lg="4" md="4" sm={12} className="cards-col">
             <div className="custom-card first-custom-card">
               <div className="img-div">
                 <img src={brand} alt="Brand" />
@@ -29,7 +29,7 @@ const Advanced = () => {
               </p>
             </div>
           </Col>
-          <Col lg="4" md="4" className="cards-col">
+          <Col lg="4" md="4" sm={12} className="cards-col">
             <div className="custom-card second-custom-card">
               <div className="img-div">
                 <img src={detailed} alt="Detailed" />
@@ -42,7 +42,7 @@ const Advanced = () => {
               </p>
             </div>
           </Col>
-          <Col lg="4" md="4" className="cards-col">
+          <Col lg="4" md="4" sm={12} className="cards-col">
             <div className="custom-card third-custom-card">
               <div className="img-div">
                 <img src={fully} alt="Fully" />

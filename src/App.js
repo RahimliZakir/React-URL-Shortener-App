@@ -5,7 +5,6 @@ import Form from "./components/Form";
 import Advanced from "./components/Advanced";
 import Boost from "./components/Boost";
 import Footer from "./components/Footer";
-import {} from "react-bootstrap";
 
 import "./assets/scss/style.scss";
 
