@@ -1,5 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import logo from "../assets/images/logo.svg";
 
@@ -9,7 +11,7 @@ const Header = () => {
       <nav>
         <Container>
           <Row>
-            <Col xl="6" lg="6" md="6" sm="6" className="left-nav">
+            <Col xl="6" lg="6" md="6" sm="6" className="left-nav col-6">
               <ul className="left-nav-ul">
                 <li>
                   <div className="img-div">
@@ -41,6 +43,11 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
+            </Col>
+            <Col sm="6" className="right-mini-nav col-6">
+              <button className="bar-btn">
+                <FontAwesomeIcon icon={faBars} />
+              </button>
             </Col>
           </Row>
         </Container>

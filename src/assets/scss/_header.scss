@@ -41,6 +41,8 @@ header {
           }
         }
         .right-nav {
+          display: block;
+
           .right-nav-ul {
             @include Flexing(center, flex-end);
             li {
@@ -71,6 +73,39 @@ header {
                 background-color: white;
                 border: 2px solid #9ae3e3;
               }
+            }
+          }
+        }
+
+        .right-mini-nav {
+          display: none;
+        }
+
+        @include MediaRespond("tel") {
+          .left-nav {
+            .left-nav-ul {
+              .img-div {
+                width: 65%;
+              }
+
+              li:not(:first-child) {
+                display: none;
+              }
+            }
+          }
+
+          .right-nav {
+            display: none;
+          }
+
+          .right-mini-nav {
+            @include Flexing(null, flex-end);
+
+            .bar-btn {
+              border: none;
+              background-color: transparent;
+              color: #9a99a1;
+              font-size: 1.4rem;
             }
           }
         }
