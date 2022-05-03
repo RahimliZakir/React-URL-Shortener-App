@@ -2,6 +2,10 @@ header {
   nav {
     padding: 1.5% 0;
 
+    @include MediaRespond("tablet") {
+      padding: 5% 0;
+    }
+
     .container {
       .row {
         align-items: center;

@@ -3,8 +3,12 @@
 
   .container {
     .row {
-      .col-md-8 {
+      .form-col {
         margin-top: -4%;
+
+        @include MediaRespond("tablet") {
+          margin-top: -6%;
+        }
 
         #term-form {
           background-color: $common-color;
@@ -18,6 +22,12 @@
               width: 75%;
               box-shadow: none !important;
               border: 1px solid transparent;
+            }
+
+            @include MediaRespond("tablet") {
+              .form-input::placeholder {
+                font-size: 0.9rem;
+              }
             }
 
             .form-input.is-validation {
@@ -42,6 +52,12 @@
         .list-group {
           .list-group-item {
             .row {
+              .link-response-left {
+                @include MediaRespond("tablet") {
+                  font-size: 0.8rem;
+                }
+              }
+
               .link-response-right {
                 @include Flexing(center, flex-end);
 

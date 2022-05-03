@@ -41,7 +41,7 @@ const Form = () => {
     <section id="form">
       <Container>
         <Row className="justify-content-center">
-          <Col md="8">
+          <Col xl="8" lg="8" md="10" className="form-col">
             <form id="term-form" onSubmit={handleFormSubmit}>
               <div className="d-flex">
                 <input
@@ -57,9 +57,9 @@ const Form = () => {
               {<p className="text-danger text-validation">{error}</p>}
             </form>
             <ListGroup>
-              {url?.map((item, index) => {
-                return <ShortLink item={item} index={index} />;
-              })}
+              {url?.map((item, index) => (
+                <ShortLink item={item} key={index + 1} />
+              ))}
             </ListGroup>
           </Col>
         </Row>

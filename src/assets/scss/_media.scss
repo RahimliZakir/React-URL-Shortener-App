@@ -1,0 +1,11 @@
+@mixin MediaRespond($val) {
+  @if ($val == "tablet") {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if($val == "tel") {
+    @media (max-width: 576px) {
+      @content;
+    }
+  }
+}

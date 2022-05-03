@@ -1,6 +1,10 @@
 #get-started {
   padding: 5% 0 7.5% 0;
 
+  @include MediaRespond("tablet") {
+    padding: 10% 0;
+  }
+
   .container {
     .row {
       align-items: center;
@@ -9,6 +13,10 @@
         h1 {
           font-size: 4rem;
           font-weight: 700;
+
+          @include MediaRespond("tablet") {
+            font-size: 3rem;
+          }
         }
 
         p {
@@ -40,6 +48,11 @@
           width: 125%;
           position: relative;
           right: -12.5%;
+
+          @include MediaRespond("tablet") {
+            width: 100%;
+          }
+
           img {
             width: 100%;
           }
