@@ -77,7 +77,8 @@ header {
           }
         }
 
-        .right-mini-nav {
+        .right-mini-nav,
+        .mini-nav-box {
           display: none;
         }
 
@@ -85,7 +86,7 @@ header {
           .left-nav {
             .left-nav-ul {
               .img-div {
-                width: 65%;
+                width: 75%;
               }
 
               li:not(:first-child) {
@@ -106,6 +107,56 @@ header {
               background-color: transparent;
               color: #9a99a1;
               font-size: 1.4rem;
+            }
+          }
+
+          .mini-nav-box {
+            display: none;
+            position: absolute;
+            top: 7.5%;
+            z-index: 999;
+
+            &.vis {
+              display: block;
+            }
+
+            .mini-nav-inner-box {
+              background-color: $common-color;
+              padding: 10% 5%;
+
+              ul {
+                li {
+                  text-align: center;
+                  margin: 3.5% 0;
+
+                  a {
+                    display: inline-block;
+                    color: white;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                  }
+
+                  .login-btn {
+                    background-color: #9ae3e3;
+                    color: white;
+                    padding-top: 2.5%;
+                    padding-bottom: 2.5%;
+                    width: 100%;
+                    border: 2px solid transparent;
+                    transition: 0.3s;
+                  }
+
+                  .login-btn:hover {
+                    color: #9ae3e3;
+                    background-color: white;
+                    border: 2px solid #9ae3e3;
+                  }
+                }
+              }
+
+              ul:first-child {
+                border-bottom: 1px solid #504669;
+              }
             }
           }
         }

@@ -12,10 +12,10 @@ const Footer = () => {
       <Container>
         {/* eslint-disable */}
         <Row>
-          <Col lg="3" md="3" className="footer-logo-col">
+          <Col xl="3" lg="3" md="3" sm="12" className="footer-logo-col">
             <h4>Shortly</h4>
           </Col>
-          <Col lg="2" md="2" className="footer-list-col">
+          <Col xl="2" lg="2" md="2" sm="12" className="footer-list-col">
             <h6>Features</h6>
             <ul>
               <li>
@@ -29,7 +29,7 @@ const Footer = () => {
               </li>
             </ul>
           </Col>
-          <Col lg="2" md="2" className="footer-list-col">
+          <Col xl="2" lg="2" md="2" sm="12" className="footer-list-col">
             <h6>Resources</h6>
             <ul>
               <li>
@@ -43,7 +43,7 @@ const Footer = () => {
               </li>
             </ul>
           </Col>
-          <Col lg="2" md="2" className="footer-list-col">
+          <Col xl="2" lg="2" md="2" sm="12" className="footer-list-col">
             <h6>Company</h6>
             <ul>
               <li>
@@ -60,7 +60,7 @@ const Footer = () => {
               </li>
             </ul>
           </Col>
-          <Col lg="3" md="3" className="footer-icons-col">
+          <Col xl="3" lg="3" md="3" sm="12" className="footer-icons-col">
             <ul>
               <li>
                 <div className="img-div">

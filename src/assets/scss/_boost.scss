@@ -3,6 +3,10 @@
   padding: 5% 0;
   background-image: url(../images/bg-boost-desktop.svg);
 
+  @include MediaRespond("tel") {
+    padding: 15% 0;
+  }
+
   .overlay {
     position: absolute;
     top: 0;

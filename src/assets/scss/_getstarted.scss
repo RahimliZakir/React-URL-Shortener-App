@@ -5,11 +5,23 @@
     padding: 10% 0;
   }
 
+  @include MediaRespond("tel") {
+    padding: 11.5% 0 18.5% 0;
+  }
+
   .container {
     .row {
       align-items: center;
 
+      @include MediaRespond("tel") {
+        flex-direction: column-reverse;
+      }
+
       .get-started-left {
+        @include MediaRespond("tel") {
+          text-align: center;
+        }
+
         h1 {
           font-size: 4rem;
           font-weight: 700;
@@ -22,6 +34,10 @@
         p {
           padding-right: 35%;
           color: #a9a8af;
+
+          @include MediaRespond("tel") {
+            padding: 0 17.5%;
+          }
         }
 
         .get-started-btn {
@@ -44,6 +60,11 @@
       }
 
       .get-started-right {
+        @include MediaRespond("tel") {
+          margin-bottom: 5%;
+          overflow: hidden;
+        }
+
         .img-div {
           width: 125%;
           position: relative;
@@ -51,6 +72,11 @@
 
           @include MediaRespond("tablet") {
             width: 100%;
+          }
+
+          @include MediaRespond("tel") {
+            width: 120%;
+            right: -20%;
           }
 
           img {

@@ -8,7 +8,7 @@ const GetStarted = () => {
     <section id="get-started">
       <Container>
         <Row>
-          <Col xl="6" lg="6" md="6" className="get-started-left">
+          <Col xl="6" lg="6" md="6" sm="12" className="get-started-left">
             <h1>More than just shorter links</h1>
             <p>
               Build your brand's recognition and get detailed insights on how
@@ -19,7 +19,7 @@ const GetStarted = () => {
               Get Started
             </a>
           </Col>
-          <Col xl="6" lg="6" md="6" className="get-started-right">
+          <Col xl="6" lg="6" md="6" sm="12" className="get-started-right">
             <div className="img-div">
               <img src={illustration} alt="Illustration" />
             </div>

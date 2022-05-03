@@ -2,6 +2,10 @@
   background-color: #f0f1f6;
   padding: 5% 0;
 
+  @include MediaRespond("tel") {
+    padding: 15% 0;
+  }
+
   .container {
     .row {
       position: relative;
@@ -13,6 +17,10 @@
       .top-paragraph {
         color: #a9a8af;
         padding: 0 30.5%;
+
+        @include MediaRespond("tel") {
+          padding: 0 15% 7.5% 15%;
+        }
       }
 
       .line {
@@ -23,10 +31,20 @@
         background-color: #32c9c5;
         height: 10px;
         width: 75%;
+
+        @include MediaRespond("tel") {
+          width: 3.5%;
+          height: 750px;
+          padding: 0;
+        }
       }
 
       .cards-col {
         margin-top: 5%;
+
+        @include MediaRespond("tel") {
+          margin-top: 10%;
+        }
 
         .custom-card {
           position: relative;
@@ -56,6 +74,12 @@
               width: 22%;
             }
 
+            @include MediaRespond("tel") {
+              left: 50%;
+              transform: translate(-50%, -50%);
+              top: 0;
+            }
+
             img {
               width: 100%;
             }
@@ -67,6 +91,11 @@
             @include MediaRespond("tablet") {
               font-size: 1rem;
             }
+
+            @include MediaRespond("tel") {
+              font-size: 1.6rem;
+              text-align: center;
+            }
           }
 
           p {
@@ -75,6 +104,12 @@
 
             @include MediaRespond("tablet") {
               font-size: 0.9rem;
+            }
+
+            @include MediaRespond("tel") {
+              text-align: center;
+              font-size: 1.1rem;
+              padding-right: 0;
             }
           }
         }

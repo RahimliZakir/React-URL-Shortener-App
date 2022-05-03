@@ -41,9 +41,9 @@ const Form = () => {
     <section id="form">
       <Container>
         <Row className="justify-content-center">
-          <Col xl="8" lg="8" md="10" className="form-col">
+          <Col xl="8" lg="8" md="10" sm="10" className="form-col">
             <form id="term-form" onSubmit={handleFormSubmit}>
-              <div className="d-flex">
+              <div className="input-btn-group d-flex">
                 <input
                   className={`form-control form-input ${
                     error === "" ? "" : "is-validation"
@@ -52,7 +52,9 @@ const Form = () => {
                   value={data}
                   onChange={(e) => setData(e.target.value)}
                 />
-                <Button type="submit">Shorten it!</Button>
+                <Button type="submit" className="rounded">
+                  Shorten it!
+                </Button>
               </div>
               {<p className="text-danger text-validation">{error}</p>}
             </form>

@@ -2,6 +2,10 @@ footer {
   background-color: $footer-bg;
   padding: 5% 0;
 
+  @include MediaRespond("tel") {
+    padding: 10% 0;
+  }
+
   .container {
     .row {
       .footer-logo-col {
@@ -9,9 +13,19 @@ footer {
           color: white;
           font-weight: 700;
         }
+
+        @include MediaRespond("tel") {
+          text-align: center;
+          margin-bottom: 5%;
+        }
       }
 
       .footer-list-col {
+        @include MediaRespond("tel") {
+          text-align: center;
+          margin-bottom: 7.5%;
+        }
+
         h6 {
           color: white;
         }
@@ -32,12 +46,21 @@ footer {
       }
 
       .footer-icons-col {
+        @include MediaRespond("tel") {
+          @include Flexing(null, center);
+        }
+
         ul {
           @include Flexing;
 
           li {
             .img-div {
               width: 85%;
+
+              @include MediaRespond("tel") {
+                width: 125%;
+              }
+
               img {
                 width: 100%;
               }
@@ -46,6 +69,10 @@ footer {
 
           li:not(:last-child) {
             margin-right: 7.5%;
+
+            @include MediaRespond("tel") {
+              margin-right: 15%;
+            }
           }
         }
       }

@@ -17,10 +17,10 @@ const ShortLink = ({ item }) => {
   return (
     <ListGroup.Item className="mt-3">
       <Row className="align-items-center">
-        <Col xl="6" lg="6" md="6" className="link-response-left">
+        <Col xl="6" lg="6" md="6" sm="12" className="link-response-left">
           {item.real}
         </Col>
-        <Col xl="6" lg="6" md="6" className="link-response-right">
+        <Col xl="6" lg="6" md="6" sm="12" className="link-response-right">
           <a
             href={item.short}
             target="_blank"

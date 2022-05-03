@@ -10,18 +10,34 @@
           margin-top: -6%;
         }
 
+        @include MediaRespond("tel") {
+          margin-top: -15%;
+        }
+
         #term-form {
           background-color: $common-color;
           padding: 4% 2%;
           border-radius: 6px;
 
-          div {
+          @include MediaRespond("tel") {
+            padding: 5%;
+          }
+
+          .input-btn-group {
             justify-content: center;
+
+            @include MediaRespond("tel") {
+              flex-direction: column;
+            }
 
             .form-input {
               width: 75%;
               box-shadow: none !important;
               border: 1px solid transparent;
+
+              @include MediaRespond("tel") {
+                width: 100%;
+              }
             }
 
             @include MediaRespond("tablet") {
@@ -41,6 +57,11 @@
               font-weight: 600;
               box-shadow: none !important;
               padding: 1.5% 3.5%;
+
+              @include MediaRespond("tel") {
+                margin-top: 3.5%;
+                margin-left: 0;
+              }
             }
           }
 
@@ -61,6 +82,11 @@
               .link-response-right {
                 @include Flexing(center, flex-end);
 
+                @include MediaRespond("tel") {
+                  @include Flexing(center, center);
+                  margin-top: 2.5%;
+                }
+
                 .copy-btn {
                   float: right;
                   box-shadow: none !important;
@@ -70,6 +96,10 @@
                   color: white;
                   font-weight: 600;
                   transition: 0.3s;
+
+                  @include MediaRespond("tel") {
+                    padding: 1.5% 7.5%;
+                  }
                 }
 
                 .copied {
