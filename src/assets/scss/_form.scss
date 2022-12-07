@@ -77,6 +77,10 @@
                 @include MediaRespond("tablet") {
                   font-size: 0.8rem;
                 }
+
+                .link-response-left-link-text {
+                  word-break: break-all;
+                }
               }
 
               .link-response-right {

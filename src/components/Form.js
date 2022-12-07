@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Container, Row, Col, Button, ListGroup } from "react-bootstrap";
 
 import API from "../api";
@@ -8,6 +8,12 @@ const Form = () => {
   const [data, setData] = useState("");
   const [url, setUrl] = useState([]);
   const [error, setError] = useState("");
+
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -45,6 +51,7 @@ const Form = () => {
             <form id="term-form" onSubmit={handleFormSubmit}>
               <div className="input-btn-group d-flex">
                 <input
+                  ref={inputRef}
                   className={`form-control form-input ${
                     error === "" ? "" : "is-validation"
                   }`}

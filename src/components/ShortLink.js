@@ -18,7 +18,7 @@ const ShortLink = ({ item }) => {
     <ListGroup.Item className="mt-3">
       <Row className="align-items-center">
         <Col xl="6" lg="6" md="6" sm="12" className="link-response-left">
-          {item.real}
+          <p className="link-response-left-link-text">{item.real}</p>
         </Col>
         <Col xl="6" lg="6" md="6" sm="12" className="link-response-right">
           <a
